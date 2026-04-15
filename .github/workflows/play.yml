@@ -29,10 +29,11 @@ jobs:
         working-directory: ./Front
         run: npm run build
 
+      
       - name: nginx start
-        # run: |
-        #   docker rm -f web
-        run: docker run -d -p 80:80 -v ./Front/dist:/usr/share/nginx/html -v ./Front/default.conf:/etc/nginx/conf.d/default.conf --name web nginx:1.28
+        run: |
+          docker rm -f web
+          docker run -d -p 80:80 -v ./Front/dist:/usr/share/nginx/html -v ./Front/default.conf:/etc/nginx/conf.d/default.conf --name web nginx:1.28
 
       - name: uv image build
         working-directory: ./Back
