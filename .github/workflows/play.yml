@@ -21,3 +21,6 @@ jobs:
       - name: Check Node.js version
         run: node -v
 
+      - name: npm install
+        working-directory: ./Front
+        run: npm i
