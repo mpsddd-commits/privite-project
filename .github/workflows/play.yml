@@ -39,7 +39,6 @@ jobs:
         working-directory: ./Back
         run: docker build -t uv:1 .
 
-
       - name: fastapi run
         working-directory: ./Back
         run: docker run -d -p 8001:8000 -v .:/workspace --name back uv:1
