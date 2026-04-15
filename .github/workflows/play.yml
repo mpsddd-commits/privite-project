@@ -28,3 +28,7 @@ jobs:
       - name: npm run build
         working-directory: ./Front
         run: npm run build
+
+      - name: nginx start
+        # working-directory: ./Front/dist
+        run: docker run -d -p 80:80 -v ./Front/dist:/usr/share/nginx/html --name web nginx:1.28
