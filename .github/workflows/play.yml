@@ -1,0 +1,17 @@
+name: play
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    # runs-on: ubuntu-latest - 이건 github에서 제공하는 가상환경, 윈도우에서 설정하기 위해 self-hosted로 변경
+    runs-on: self-hosted
+    steps:
+      # - uses: actions/checkout@v
+      - name: Check PowerShell
+        run: $PSVersionTable
+        
