@@ -12,6 +12,12 @@ jobs:
     runs-on: self-hosted
     steps:
       # - uses: actions/checkout@v
-      - name: Check PowerShell
-        run: $PSVersionTable
-        
+      # - name: Check PowerShell - 확인용
+      #   run: $PSVersionTable
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        # with:
+        #   path: .
+      - name: Check Node.js version
+        run: node -v
+
